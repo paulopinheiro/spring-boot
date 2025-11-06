@@ -1,6 +1,8 @@
 package br.com.paulopinheiro.springbootdemo.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.io.Serializable;
 
@@ -9,13 +11,13 @@ public class DemoEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String label;
 
     public DemoEntity() {}
 
-    public DemoEntity(Integer id, String label) {
-        this.id = id;
+    public DemoEntity(String label) {
         this.label = label;
     }
 

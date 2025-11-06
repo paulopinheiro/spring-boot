@@ -14,7 +14,7 @@ public class DemoEntityRepositoryTest {
 
     @Test
     public void shouldSaveEntity() {
-        DemoEntity entity = entityRepository.save(new DemoEntity(3, "The third"));
+        DemoEntity entity = entityRepository.save(new DemoEntity("The third"));
         DemoEntity foundEntity = entityRepository.findById(entity.getId()).get();
 
         assertNotNull(foundEntity);
